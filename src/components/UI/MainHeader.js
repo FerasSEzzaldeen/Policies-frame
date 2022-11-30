@@ -10,7 +10,7 @@ const MyHeader = styled.header`
   background: #303841;
   color: #EEEEEE;
   padding: 0 2rem;
-  border-bottom: 4px solid #F6C90E;
+  border-bottom: 4px solid #EAB35A;
 
 `;
 

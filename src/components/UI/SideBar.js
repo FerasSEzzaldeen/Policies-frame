@@ -1,6 +1,49 @@
 import React from "react";
 import styled from "styled-components";
 import List from "../shared/List";
+import DropdownLinks from "../shared/DropdownLinks";
+
+const ListOfLinks = [
+  {
+    name:"Financial Policies",
+    subPolicies: [
+      {
+        name: "Payment Method",
+        link: "/financial/availablecc"
+      },
+      {
+        name: "Refund Policies",
+        link: "/financial/refundpolicies"
+      }
+    ]
+  },
+  {
+    name:"Markiting Policies",
+    subPolicies: [
+      {
+        name: "Payment Method",
+        link: "/financial/availablecc"
+      },
+      {
+        name: "Refund Policies",
+        link: "/financial/refundpolicies"
+      }
+    ]
+  },
+  {
+    name:"Digital Subscription",
+    subPolicies: [
+      {
+        name: "Payment Method",
+        link: "/financial/availablecc"
+      },
+      {
+        name: "Refund Policies",
+        link: "/financial/refundpolicies"
+      }
+    ]
+  }
+]
 const NavSec = styled.div`
   /* background-color: #B2B2B2; */
   width: 15%;
@@ -21,23 +64,21 @@ const SideBar = () => {
   return (
     <NavSec>
       <Wrapper>
-        <List
-          title={"Client"}
-          subs={["Support Trials", "Gifting Policies"]}
-          path={"/marketing/giftingpolicies"}
+        {/* <List
+          title={"Financial Policies"}
+          path={"/financial/availablecc"}
         />
         <List
-          title={"Offer"}
-          path={""}
+          title={"Marketing Policies"}
+          path={"/marketing"}
         />
         <List
-          title={"product"}
-          path={"/digital/subscriptions"}
-        />
-        <List
-          title={"somthing else"}
-          path={"/digital/subscriptions"}
-        />
+          title={"Digital Subscriptions"}
+          path={"/digital"}
+        /> */}
+        {ListOfLinks.map(group=>(
+          <DropdownLinks group={group} />
+        ))}
       </Wrapper>
     </NavSec>
   );

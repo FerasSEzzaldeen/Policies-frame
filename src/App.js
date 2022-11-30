@@ -1,17 +1,14 @@
+import {RouterProvider,} from "react-router-dom";
 import MainHeader from "./components/UI/MainHeader";
-import SideBar from "./components/UI/SideBar";
-import styled from "styled-components";
+import router from "./routes/router";
 
-const MainDiv = styled.div`
- background-color: #EEEEEE;
-`;
+
+
 function App() {
   return (
     <>
     <MainHeader />
-    <MainDiv>
-      <SideBar/>
-    </MainDiv>
+      <RouterProvider router={router} />
     </>
   );
 }

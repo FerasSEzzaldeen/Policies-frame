@@ -1,37 +1,32 @@
 import styled from "styled-components";
-
-const AnchorButton = styled.a`
+import { NavLink } from "react-router-dom";
+const StyledNavLink = styled(NavLink)`
   display: flex;
-  width: 100%;
+  width: 80%;
   height: 40px;
   justify-content: center;
   align-items: center;
   color: #3C4048;
-  border-radius: 15px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 900;
   transition: .2s;
-
-  &:hover{
+  /* color: ${isActive => (isActive ? 'blue' : 'red')}; */
+  &.active{
     color: #EAEAEA;
     background-color: #303841;
   }
+  &:hover{
 
-  &:active{
     color: #303841;
-    background-color: #F6C90E;
+    background-color: #EAB35A;
   }
 `;
 
 const List = (props) => {
   return (
     <>
-      <AnchorButton href={props.path}>{props.title}</AnchorButton>
-      {/* <ListUl>
-        {props.subs.map((sub) => (
-          <ListLi>{sub}</ListLi>
-        ))}
-      </ListUl> */}
+      <StyledNavLink to={props.path} >{props.title}</StyledNavLink>
     </>
   );
 };
