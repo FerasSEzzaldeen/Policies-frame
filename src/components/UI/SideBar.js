@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import List from "../shared/List";
 import DropdownLinks from "../shared/DropdownLinks";
 
 const ListOfLinks = [
@@ -21,12 +20,12 @@ const ListOfLinks = [
     name:"Markiting Policies",
     subPolicies: [
       {
-        name: "Payment Method",
-        link: "/financial/availablecc"
+        name: "Support Trials",
+        link: "/marketing/supporttrials"
       },
       {
-        name: "Refund Policies",
-        link: "/financial/refundpolicies"
+        name: "Gifting Policies",
+        link: "/marketing/giftingpolicies"
       }
     ]
   },
@@ -34,19 +33,15 @@ const ListOfLinks = [
     name:"Digital Subscription",
     subPolicies: [
       {
-        name: "Payment Method",
-        link: "/financial/availablecc"
+        name: "Require Physical Address",
+        link: "/digital/requirephysicaladdress"
       },
-      {
-        name: "Refund Policies",
-        link: "/financial/refundpolicies"
-      }
     ]
   }
 ]
 const NavSec = styled.div`
   /* background-color: #B2B2B2; */
-  width: 15%;
+  width: 20%;
   height: 800px;
   margin: 0;
   display: flex;
@@ -64,18 +59,6 @@ const SideBar = () => {
   return (
     <NavSec>
       <Wrapper>
-        {/* <List
-          title={"Financial Policies"}
-          path={"/financial/availablecc"}
-        />
-        <List
-          title={"Marketing Policies"}
-          path={"/marketing"}
-        />
-        <List
-          title={"Digital Subscriptions"}
-          path={"/digital"}
-        /> */}
         {ListOfLinks.map(group=>(
           <DropdownLinks group={group} />
         ))}

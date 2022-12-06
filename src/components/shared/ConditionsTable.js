@@ -5,14 +5,14 @@ height: 10px;
 `;
 
 const StyledTH = styled.th`
-  width: 250px;
+  width: 200px;
   text-align: start;
   border-bottom: 1px solid black;
   margin-bottom: px;
 `;
 
 const StyledTD = styled.td`
-  width: 250px;
+  width: 200px;
   border-bottom: 1px solid black;
 `;
 
@@ -29,6 +29,7 @@ const ConditionsTable = () => {
           <StyledTH>Status</StyledTH>
           <StyledTH>Level Type</StyledTH>
           <StyledTH>Last Modified</StyledTH>
+          <StyledTH>Modified By</StyledTH>
         </tr>
         <StyledTR />
         <tr>
@@ -36,6 +37,7 @@ const ConditionsTable = () => {
           <StyledTD>active</StyledTD>
           <StyledTD>Brand</StyledTD>
           <StyledTD>3/14/21</StyledTD>
+          <StyledTH>Admin 1</StyledTH>
           <StyledDotTD> ... </StyledDotTD>
         </tr>
         <StyledTR />
@@ -44,6 +46,7 @@ const ConditionsTable = () => {
           <StyledTD>active</StyledTD>
           <StyledTD>Brand</StyledTD>
           <StyledTD>3/14/21</StyledTD>
+          <StyledTH>Admin 2</StyledTH>
           <StyledDotTD> ... </StyledDotTD>
         </tr>
       </table>

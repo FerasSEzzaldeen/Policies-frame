@@ -22,7 +22,11 @@ const LinksWrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
 `;
- 
+
+const Wrapper = styled.div`
+  margin-bottom: 30px;
+`;
+
 const DropdownLinks = (props) => {
   const toggle = () => {
     setOPen(!open);
@@ -30,17 +34,16 @@ const DropdownLinks = (props) => {
 
   const [open, setOPen] = useState(false);
   return (
-    <div>
+    <Wrapper>
       <StyledButton onClick={toggle}>{props.group.name}</StyledButton>
       {open && (
         <LinksWrapper>
           {props.group.subPolicies.map((item)=>(
             <List title={item.name} path={item.link} />
           ))}
-          {/* <List title={"Refund Policies"} path={"/financial/refundpolicies"} /> */}
         </LinksWrapper>
       )}
-    </div>
+    </Wrapper>
   );
 };
 export default DropdownLinks;

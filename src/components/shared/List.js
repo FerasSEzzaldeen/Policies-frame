@@ -11,7 +11,6 @@ const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-weight: 900;
   transition: .2s;
-  /* color: ${isActive => (isActive ? 'blue' : 'red')}; */
   &.active{
     color: #EAEAEA;
     background-color: #303841;

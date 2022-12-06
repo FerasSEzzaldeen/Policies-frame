@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import YellowButton from "../../components/shared/YellowButton";
 import ConditionsTable from "../../components/shared/ConditionsTable";
-import Modal from "../../Modals/FinancialConditionModal"
+import Modal from "../../Modals/FinancialConditionModal";
+import CollapsibleSelect from "../../components/shared/CollapsibleSelect";
+import FilterBar from "../../components/shared/FilterBar";
 import { useState } from "react";
 
 const Wrapper = styled.div`
@@ -35,57 +37,36 @@ const InnerDiv = styled.div`
 
 const StyledTableDiv = styled.div``;
 
-
-
 const AvailableCC = () => {
-  const [isOpen, setOpen] = useState(false)
-  
+  const [isOpen, setOpen] = useState(false);
   const handleOpenModal = () => {
-    setOpen(true)
-  }
+    setOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   return (
     <>
-      {isOpen && <Modal closeModal={handleCloseModal}/>}
+      {isOpen && <Modal closeModal={handleCloseModal} />}
       <Wrapper>
-        <h1>Available Credit Cards</h1>
-        <h3>Background Info</h3>
+        <h1>Payment Method</h1>
+        {/* <h3>Background Info</h3> */}
         <StyledFirtsP>
-          If credit cards are an acceptable payment method, this policy allows
-          you to specify which credit card types are available for customer use.
-          Before enabling a credit card type, it must first be configured and
-          enabled with the credit card payment processor.
+          Here you can manage the Policies related to Payment
         </StyledFirtsP>
-        <h3>System Level Policy Options</h3>
-        <p>Selected cards types are available for credit card orders.</p>
-        <StyledFilterOutWrapper>
-          <StyledFilterInWrapper>
-            <StyledInput type="checkbox" />
-            <p>American Express</p>
-          </StyledFilterInWrapper>
-          <StyledFilterInWrapper>
-            <StyledInput type="checkbox" />
-            <p>Discover</p>
-          </StyledFilterInWrapper>
-          <StyledFilterInWrapper>
-            <StyledInput type="checkbox" />
-            <p>MasterCard</p>
-          </StyledFilterInWrapper>
-          <StyledFilterInWrapper>
-            <StyledInput type="checkbox" />
-            <p>VISA</p>
-          </StyledFilterInWrapper>
-        </StyledFilterOutWrapper>
+        {/* <h3>System Level Policy Options</h3> */}
+        {/* <p>Selected cards types are available for credit card orders.</p> */}
+        {/* <CollapsibleSelect /> */}
+        {/* <StyledFilterOutWrapper>
+        </StyledFilterOutWrapper> */}
         <StyledTableDiv>
           <InnerDiv>
-          <h3>Conditions</h3>
-          <YellowButton title="Create Condition" onClick={handleOpenModal} />
-
+            <h3>Conditions</h3>
+            <YellowButton title="Create Condition" onClick={handleOpenModal} />
           </InnerDiv>
+          <FilterBar />
           <ConditionsTable />
         </StyledTableDiv>
       </Wrapper>

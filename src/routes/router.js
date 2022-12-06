@@ -1,12 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import Digital from "../pages/Digital";
-import Financial from "../pages/Financial";
-import Marketing from "../pages/Marketing";
+import SupportTrials from "../pages/SupportTrials";
 import Root from "./root";
 import AvailableCC from "../pages/Financtial/AvailableCC"
-import AvailablePM from "../pages/Financtial/AvailablePM"
-import AllowForCredit from "../pages/Financtial/AllowForCredit"
-import DeclinedPaymentPolicies from "../pages/Financtial/DeclinedPaymentPolicies"
+import GiftingPolicies from "../pages/Financtial/GiftingPolicies"
+import RequirePhysicalAddress from "../pages/Financtial/RequirePhysicalAddress"
 import RefundPolicies from "../pages/Financtial/RefundPolicies"
 
 const router = createBrowserRouter([
@@ -19,8 +16,12 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "/marketing",
-        element: <Marketing />,
+        path: "supporttrials",
+        element: <SupportTrials />,
+      },
+      {
+        path: "giftingpolicies",
+        element: <GiftingPolicies />,
       },
     ],
   },
@@ -29,31 +30,12 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "/financial/",
-        element: <Financial />,
-        
-        children: [
-          {
-            path: "availablecc",
-            element: <AvailableCC />,
-          },
-          {
-            path: "availablepm",
-            element: <AvailablePM />,
-          },
-          {
-            path: "allowforcredit",
-            element: <AllowForCredit />,
-          },
-          {
-            path: "refundpolicies",
-            element: <RefundPolicies />,
-          },
-          {
-            path: "declinedpp",
-            element: <DeclinedPaymentPolicies />,
-          },
-        ],
+        path: "availablecc",
+        element: <AvailableCC />,
+      },
+      {
+        path: "refundpolicies",
+        element: <RefundPolicies />,
       },
     ],
   },
@@ -62,8 +44,8 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "/digital",
-        element: <Digital />,
+        path: "requirephysicaladdress",
+        element: <RequirePhysicalAddress />,
       },
     ],
   },

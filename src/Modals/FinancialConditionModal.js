@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import YellowButton from "../components/shared/YellowButton";
 import RedButton from "../components/shared/RedButton";
+import CollapsibleSelect from "../components/shared/CollapsibleSelect";
 const DarkBG = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -13,6 +14,7 @@ const DarkBG = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 `;
 
 const Centered = styled.div`
@@ -27,7 +29,6 @@ const ModalBody = styled.div`
   width: 700px;
   height: 700px;
   background: white;
-  z-index: 10;
   border-radius: 16px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
   display: flex;
@@ -120,22 +121,7 @@ const Modal = (props) => {
                 <h3>Policy Options for Condition</h3>
                 <p>Selected Card are Available as Payment Methods </p>
                 <StyledFilterOutWrapper>
-                  <StyledFilterInWrapper>
-                    <StyledInput type="checkbox" />
-                    <p>American Express</p>
-                  </StyledFilterInWrapper>
-                  <StyledFilterInWrapper>
-                    <StyledInput type="checkbox" />
-                    <p>Discover</p>
-                  </StyledFilterInWrapper>
-                  <StyledFilterInWrapper>
-                    <StyledInput type="checkbox" />
-                    <p>MasterCard</p>
-                  </StyledFilterInWrapper>
-                  <StyledFilterInWrapper>
-                    <StyledInput type="checkbox" />
-                    <p>VISA</p>
-                  </StyledFilterInWrapper>
+                  <CollapsibleSelect />
                 </StyledFilterOutWrapper>
                 <ButtonsWrapper>
                   <YellowButton title="Save" onClick={props.closeModal} />
