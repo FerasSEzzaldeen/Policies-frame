@@ -39,17 +39,24 @@ const InnerDiv = styled.div`
 const StyledTableDiv = styled.div``;
 
 const RefundPolicies = () => {
- 
+  const [isOpen, setOpen] = useState(false);
+  const handleOpenModal = (e) => {
+    e.preventDefault()
+    setOpen(true);
+  };
+  const handleCloseModal = () => {
+    setOpen(false);
+  };
 
   return (
     <>
+      {isOpen && <Modal closeModal={handleCloseModal} />}
       <Wrapper>
         <h1>Search for a Policy</h1>
         <StyledTableDiv>
-          {/* <InnerDiv>
-            <h3>Conditions</h3>
-            <YellowButton title="Create Condition" onClick={handleOpenModal} />
-          </InnerDiv> */}
+          <InnerDiv>
+            <YellowButton title="Create Policy" onClick={handleOpenModal} />
+          </InnerDiv>
           <FilterBar />
           <ConditionsTable />
         </StyledTableDiv>

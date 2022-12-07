@@ -10,10 +10,10 @@ const ListOfLinks = [
         name: "Create Policy",
         link: "/financial/availablecc"
       },
-      {
-        name: "Search Policy",
-        link: "/financial/refundpolicies"
-      }
+      // {
+      //   name: "Search Policy",
+      //   link: "/financial/refundpolicies"
+      // }
     ]
   },
   {
