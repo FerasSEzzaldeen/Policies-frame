@@ -25,7 +25,6 @@ const FormWrapper = styled.div`
   margin: 0;
   top: 30px;
   left: 0;
-  opacity: .7;
 
 `;
 
@@ -47,6 +46,9 @@ const OptionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  &:hover {
+    background-color: #EAB35A;
+  }
 `;
 
 
@@ -73,7 +75,7 @@ const CollapsibleSelect = (props) => {
         {open && (
           <FormWrapper>
             <form>
-              <OptionWrapper>
+              {/* <OptionWrapper>
                 <label>Amazon Pay</label>
                 <input type="checkbox" />
               </OptionWrapper>
@@ -84,7 +86,7 @@ const CollapsibleSelect = (props) => {
               <OptionWrapper>
                 <label>PayPal</label>
                 <input type="checkbox" />
-              </OptionWrapper>
+              </OptionWrapper> */}
               <OptionWrapper>
                 <StyledP onClick={(e)=>CreditCardHandeler(e)}>Credit Card</StyledP>
               </OptionWrapper>

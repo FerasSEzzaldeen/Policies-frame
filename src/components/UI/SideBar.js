@@ -7,11 +7,11 @@ const ListOfLinks = [
     name:"Financial Policies",
     subPolicies: [
       {
-        name: "Payment Method",
+        name: "Create Policy",
         link: "/financial/availablecc"
       },
       {
-        name: "Refund Policies",
+        name: "Search Policy",
         link: "/financial/refundpolicies"
       }
     ]
