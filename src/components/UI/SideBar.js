@@ -17,7 +17,7 @@ const ListOfLinks = [
     ]
   },
   {
-    name:"Markiting Policies",
+    name:"Marketing Policies",
     subPolicies: [
       {
         name: "Support Trials",
