@@ -146,7 +146,7 @@ const Modal = (props) => {
 
           <ButtonsWrapper>
             <YellowButton title="Save" onClick={(e)=>{}} />
-            <RedButton title="Cancel" />
+            <RedButton title="Cancel" onClick={(e)=>{}}/>
           </ButtonsWrapper>
         </form>
       </Wrapper>

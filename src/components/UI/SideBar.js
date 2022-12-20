@@ -10,10 +10,10 @@ const ListOfLinks = [
         name: "Create Policy",
         link: "/financial/availablecc"
       },
-      // {
-      //   name: "Search Policy",
-      //   link: "/financial/refundpolicies"
-      // }
+      {
+        name: "Advanced Notification",
+        link: "/financial/refundpolicies"
+      }
     ]
   },
   {
@@ -41,7 +41,8 @@ const ListOfLinks = [
 ]
 const NavSec = styled.div`
   /* background-color: #B2B2B2; */
-  width: 20%;
+  max-width: 20%;
+  width: 100%;
   height: 800px;
   margin: 0;
   display: flex;

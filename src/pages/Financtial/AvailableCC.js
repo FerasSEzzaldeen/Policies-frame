@@ -19,10 +19,23 @@ const InnerDiv = styled.div`
   margin-bottom: 20px;
 `;
 
-const StyledTableDiv = styled.div``;
+const CoverModal = styled.div`
+z-index: 1000;
+background-color: black;
+opacity: .3;
+width: 100%;
+height: 100%;
+border-radius: 5px;
+position: absolute;
+`;
+
+const StyledTableDiv = styled.div`
+position: relative;
+`;
 
 const AvailableCC = () => {
   const [isOpen, setOpen] = useState(false);
+  const [DefaultPolicy, setDefaultPolicy] = useState(false);
   const handleOpenModal = (e) => {
     e.preventDefault()
     setOpen(true);
@@ -31,12 +44,19 @@ const AvailableCC = () => {
     setOpen(false);
   };
 
+  const handleDefualtPolicies = (e) =>{
+    setDefaultPolicy(!DefaultPolicy)
+  }
+
   return (
     <>
       {isOpen && <Modal closeModal={handleCloseModal} />}
       <Wrapper>
         <h1>Search for a Policy</h1>
+        <label>Default Policies</label>
+        <input type="checkbox" onChange={(e) => handleDefualtPolicies(e)} />
         <StyledTableDiv>
+          {DefaultPolicy && <CoverModal />}
           <InnerDiv>
             <YellowButton title="Create Policy" onClick={handleOpenModal} />
           </InnerDiv>

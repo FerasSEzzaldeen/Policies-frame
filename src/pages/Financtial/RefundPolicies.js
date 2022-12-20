@@ -1,65 +1,94 @@
-
 import styled from "styled-components";
-import YellowButton from "../../components/shared/YellowButton";
-import ConditionsTable from "../../components/shared/ConditionsTable";
-import Modal from "../../Modals/FinancialConditionModal";
-import CollapsibleSelect from "../../components/shared/CollapsibleSelect";
-import FilterBar from "../../components/shared/FilterBar";
-import { useState } from "react";
 
 const Wrapper = styled.div`
   margin: 20px;
+  width: 50%;
+`;
+const StyledTR = styled.tr`
+height: 10px;
 `;
 
-const StyledFirtsP = styled.p`
-  font-size: 15px;
-  max-width: 800px;
+const StyledTH = styled.th`
+  width: 200px;
+  text-align: start;
+  border-bottom: 1px solid black;
+  margin-bottom: px;
 `;
 
-const StyledFilterOutWrapper = styled.div`
-  display: flex;
-  margin-bottom: 90px;
+const StyledTD = styled.td`
+  width: 200px;
+  border-bottom: 1px solid black;
 `;
 
-const StyledFilterInWrapper = styled.div`
-  display: flex;
-  width: 230px;
-`;
 
-const StyledInput = styled.input`
-  margin-right: 10px;
+const TableWrapper = styled.div`
+  margin: 40px 0;
 `;
-
-const InnerDiv = styled.div`
+const FilterWrapper = styled.div`
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 50px 0;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
 `;
 
-const StyledTableDiv = styled.div``;
-
-const RefundPolicies = () => {
-  const [isOpen, setOpen] = useState(false);
-  const handleOpenModal = (e) => {
-    e.preventDefault()
-    setOpen(true);
-  };
-  const handleCloseModal = () => {
-    setOpen(false);
-  };
-
+const FilterOptionWrapper = styled.div`
+  display: flex;
+  /* flex-direction: column; */
+  /* width: 20%; */
+  margin: 10px;
+`;
+const RefundPolicies = (props) => {
   return (
     <>
-      {isOpen && <Modal closeModal={handleCloseModal} />}
       <Wrapper>
-        <h1>Search for a Policy</h1>
-        <StyledTableDiv>
-          <InnerDiv>
-            <YellowButton title="Create Policy" onClick={handleOpenModal} />
-          </InnerDiv>
-          <FilterBar />
-          <ConditionsTable />
-        </StyledTableDiv>
+        <h1>Advanced Notifications</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua.
+        </p>
+        <FilterWrapper>
+        <FilterOptionWrapper>
+          <label>search by name</label>
+          <input type="text" />
+        </FilterOptionWrapper>
+        <FilterOptionWrapper>
+          <label>Filter by LevelType</label>
+          <select>
+            <option>None</option>
+            <option>Client</option>
+            <option>Brand</option>
+            <option>Offer</option>
+            <option>Product</option>
+          </select>
+        </FilterOptionWrapper>
+      </FilterWrapper>
+        <TableWrapper>
+          <table>
+            <StyledTR>
+              <StyledTH>level</StyledTH>
+              <StyledTH>name</StyledTH>
+              <StyledTH>number of days</StyledTH>
+            </StyledTR>
+            <StyledTR>
+              <StyledTD>client</StyledTD>
+              <StyledTD>--</StyledTD>
+              <StyledTD>
+                <input onBlur={()=>{console.log("hellooo")}} type="number" defaultValue={7}/>
+              </StyledTD>
+            </StyledTR>
+            <StyledTR>
+              <StyledTD>brand</StyledTD>
+              <StyledTD>anything</StyledTD>
+              <StyledTD>
+                <input onBlur={()=>{console.log("hellooo")}} type="number" defaultValue={7}/>
+              </StyledTD>
+            </StyledTR>
+          </table>
+        </TableWrapper>
       </Wrapper>
     </>
   );
