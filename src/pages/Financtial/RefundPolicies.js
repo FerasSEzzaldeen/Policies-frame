@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   width: 50%;
 `;
 const StyledTR = styled.tr`
-height: 10px;
+  height: 10px;
 `;
 
 const StyledTH = styled.th`
@@ -19,7 +19,6 @@ const StyledTD = styled.td`
   width: 200px;
   border-bottom: 1px solid black;
 `;
-
 
 const TableWrapper = styled.div`
   margin: 40px 0;
@@ -51,21 +50,21 @@ const RefundPolicies = (props) => {
           incididunt ut labore et dolore magna aliqua.
         </p>
         <FilterWrapper>
-        <FilterOptionWrapper>
-          <label>search by name</label>
-          <input type="text" />
-        </FilterOptionWrapper>
-        <FilterOptionWrapper>
-          <label>Filter by LevelType</label>
-          <select>
-            <option>None</option>
-            <option>Client</option>
-            <option>Brand</option>
-            <option>Offer</option>
-            <option>Product</option>
-          </select>
-        </FilterOptionWrapper>
-      </FilterWrapper>
+          <FilterOptionWrapper>
+            <label>search by name</label>
+            <input type="text" />
+          </FilterOptionWrapper>
+          <FilterOptionWrapper>
+            <label>Filter by LevelType</label>
+            <select>
+              <option>None</option>
+              <option>Client</option>
+              <option>Brand</option>
+              <option>Offer</option>
+              <option>Product</option>
+            </select>
+          </FilterOptionWrapper>
+        </FilterWrapper>
         <TableWrapper>
           <table>
             <StyledTR>
@@ -77,14 +76,26 @@ const RefundPolicies = (props) => {
               <StyledTD>client</StyledTD>
               <StyledTD>--</StyledTD>
               <StyledTD>
-                <input onBlur={()=>{console.log("hellooo")}} type="number" defaultValue={7}/>
+                <input
+                  onBlur={() => {
+                    console.log("hellooo");
+                  }}
+                  type="number"
+                  defaultValue={7}
+                />
               </StyledTD>
             </StyledTR>
             <StyledTR>
               <StyledTD>brand</StyledTD>
               <StyledTD>anything</StyledTD>
               <StyledTD>
-                <input onBlur={()=>{console.log("hellooo")}} type="number" defaultValue={7}/>
+                <input
+                  onBlur={() => {
+                    console.log("hellooo");
+                  }}
+                  type="number"
+                  defaultValue={7}
+                />
               </StyledTD>
             </StyledTR>
           </table>
